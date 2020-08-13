@@ -11,7 +11,7 @@ class WeekContainer extends Component {
 
   componentDidMount = () => {
     const weatherURL =
-      `http://api.openweathermap.org/data/2.5/forecast?zip=11102&units=imperial&APPID=${apiConfig.owmKey}`
+      `http://api.openweathermap.org/data/2.5/forecast?zip=78741&units=imperial&APPID=${apiConfig.owmKey}`
 
     fetch(weatherURL)
       .then(res => res.json())
@@ -31,7 +31,11 @@ class WeekContainer extends Component {
   render() {
     return (
       <div className="week-container">
-        {this.formatDayCards()}
+        <h1 className="display-1 jumbotron">5-Day Forecast</h1>
+        <h5 className="display-5 text-muted">Austin, US</h5>
+        <div className="row justify-content-center">
+          {this.formatDayCards()}
+        </div>
       </div>
     );
   }
